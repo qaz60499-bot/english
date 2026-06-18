@@ -1,0 +1,1 @@
+{"name":"英语星球","short_name":"英语星球","description":"移动端优先的英语学习 PWA","start_url":".","display":"standalone","background_color":"#fff8ef","theme_color":"#fff8ef","lang":"zh-CN","scope":"./","icons":[{"src":"icons/icon.svg","sizes":"192x192","type":"image/svg+xml","purpose":"any maskable"}]}
