@@ -1,0 +1,6 @@
+import{c as g}from"./index-BNc8Ypok.js";/**
+ * @license lucide-react v0.468.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const y=g("ArrowRight",[["path",{d:"M5 12h14",key:"1ays0h"}],["path",{d:"m12 5 7 7-7 7",key:"xquz4c"}]]),e=["BASIC","CET4","CET6","IELTS","TOEFL"];function r(a,d,n){if(a<=0)return 0;const l=(n==null?void 0:n.dailyMinutes)??10,t=Math.round(a*Math.min(1,l/Math.max(d,1))),i=(n==null?void 0:n.energy)==="light"?-1:(n==null?void 0:n.energy)==="challenge"?1:0;return Math.max(Math.min(4,a),Math.min(a,t+i))}function x(a,d,n="BASIC"){const l=new Set(d.filter(o=>o.completed).map(o=>o.lessonId)),t=a.filter(o=>o.level===n),i=t.find(o=>!l.has(o.id));if(i)return i;const h=e.indexOf(n),c=[...e.slice(h+1),...e.slice(0,h)];for(const o of c){const s=a.find(u=>u.level===o&&!l.has(u.id));if(s)return s}return t[0]??a[0]}function A(a,d,n="BASIC"){const l=new Set(d.filter(t=>t.level===n).map(t=>t.id));return[...a].filter(t=>l.has(t.lessonId)&&!t.completed&&(t.currentStep>0||Object.keys(t.answers??{}).length>0)).sort((t,i)=>new Date(i.updatedAt).getTime()-new Date(t.updatedAt).getTime())[0]}export{y as A,x as a,r as b,A as g};
