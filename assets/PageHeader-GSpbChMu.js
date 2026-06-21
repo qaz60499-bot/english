@@ -1,1 +1,0 @@
-import{j as e}from"./index-C0N-CaHd.js";function h({eyebrow:s,title:r,description:a}){return e.jsxs("header",{className:"page-header",children:[s&&e.jsx("span",{className:"eyebrow",children:s}),e.jsx("h1",{children:r}),a&&e.jsx("p",{children:a})]})}export{h as P};
