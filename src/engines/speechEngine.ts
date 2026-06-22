@@ -188,7 +188,9 @@ export async function speak(
     const utterance = new SpeechSynthesisUtterance(speechText);
     utterance.voice = preferredVoice;
     utterance.lang = resolution.actualLang;
-    utterance.rate = options.rate ?? 0.85;
+    utterance.rate = options.rate ?? 0.65;
+    utterance.pitch = 1;
+    utterance.volume = 1;
 
     const release = () => {
       if (activeUtterance === utterance) activeUtterance = null;

@@ -171,6 +171,7 @@ test("wrong answers reveal and persist a correction", async ({ page }) => {
   await page.getByRole("button", { name: "hello" }).click();
   await page.getByRole("button", { name: "提交订正" }).click();
   await expect(page.getByText("订正正确")).toBeVisible();
+  await expect(page.getByText("正在保存")).toHaveCount(0);
   await page.reload();
   await expect(page.getByText("订正正确")).toBeVisible();
 });

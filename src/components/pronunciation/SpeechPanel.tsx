@@ -13,7 +13,7 @@ interface SpeechPanelProps {
 export function SpeechPanel({ text, onPlayback, onRecordingReady, onRecordingFallback }: SpeechPanelProps) {
   const support = useMemo(() => getSpeechSupport(), []);
   const accent = useLearningStore((state) => state.preferences?.accent ?? "auto");
-  const [rate, setRate] = useState(0.85);
+  const [rate, setRate] = useState(0.65);
   const [recording, setRecording] = useState<RecordingController | null>(null);
   const recordingRef = useRef<RecordingController | null>(null);
   const mountedRef = useRef(true);
@@ -104,9 +104,9 @@ export function SpeechPanel({ text, onPlayback, onRecordingReady, onRecordingFal
         <label className="field speech-rate">
           速度
           <select value={rate} onChange={(event) => setRate(Number(event.target.value))}>
-            <option value={0.65}>0.65 拆音</option>
-            <option value={0.8}>0.8 跟读</option>
-            <option value={1}>1.0 常速</option>
+            <option value={0.65}>0.65 标准</option>
+            <option value={0.8}>0.8 较快</option>
+            <option value={1}>1.0 快速</option>
           </select>
         </label>
         <span className="badge">
@@ -125,7 +125,7 @@ export function SpeechPanel({ text, onPlayback, onRecordingReady, onRecordingFal
           {recording ? "停止录音" : support.recording ? "录音回听" : "设备不支持录音"}
         </button>
       </div>
-      <p className="speech-message" aria-live="polite">{message || (support.recognition ? "此浏览器支持语音能力；当前以标准音、录音回听和自评为主。" : "语音识别不可用时，仍可播放、慢速、录音和自检。")}</p>
+      <p className={`speech-message${message ? "" : " is-default"}`} aria-live="polite">{message || (support.recognition ? "此浏览器支持语音能力；当前以标准音、录音回听和自评为主。" : "语音识别不可用时，仍可播放、慢速、录音和自检。")}</p>
       {audioUrl && <audio controls src={audioUrl} aria-label="本地录音回听" />}
     </section>
   );

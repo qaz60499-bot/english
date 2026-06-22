@@ -201,6 +201,9 @@ export function LessonRunner({ lesson }: LessonRunnerProps) {
         updatedAt: new Date().toISOString()
       });
       setStep(nextStep);
+      window.requestAnimationFrame(() => {
+        document.querySelector(".lesson-session")?.scrollIntoView();
+      });
     } finally {
       setSaving(false);
     }

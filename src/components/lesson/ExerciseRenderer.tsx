@@ -257,7 +257,7 @@ export function ExerciseRenderer({ exercise, savedAnswer, onComplete }: Exercise
 
   async function playCorrectAnswer() {
     setAudioMessage("正在准备英语语音…");
-    const result = await speak(formatExerciseAnswer(exercise), { rate: 0.82, lang: speechLang });
+    const result = await speak(formatExerciseAnswer(exercise), { rate: 0.65, lang: speechLang });
     if (result.reason === "cancelled") return;
     setAudioMessage(describeSpeechPlayback(result, speechLang));
   }
