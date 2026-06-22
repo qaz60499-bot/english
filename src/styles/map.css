@@ -1,0 +1,351 @@
+.learning-map-page {
+  display: grid;
+  gap: clamp(1.25rem, 2.6vw, 2rem);
+}
+
+.map-overview-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
+  align-items: end;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  border-color: color-mix(in srgb, var(--color-sea) 24%, var(--color-line));
+  background:
+    radial-gradient(circle at 8% 14%, color-mix(in srgb, var(--color-sea) 10%, transparent), transparent 30%),
+    radial-gradient(circle at 92% 8%, color-mix(in srgb, var(--color-sun) 8%, transparent), transparent 28%),
+    var(--color-surface);
+  padding: clamp(1.1rem, 2.5vw, 1.65rem);
+}
+
+.map-overview-copy {
+  display: grid;
+  gap: 1rem;
+}
+
+.map-overview-panel .page-header {
+  max-width: none;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.map-overview-panel .page-header h1 {
+  max-width: 17ch;
+  margin: 0;
+  font-size: clamp(1.9rem, 3.4vw, 3rem);
+  line-height: 1.06;
+}
+
+.map-overview-panel .page-header p {
+  max-width: 62ch;
+  margin: 0;
+  font-size: 0.98rem;
+}
+
+.map-overview-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.map-overview-stats span {
+  border: 1px solid color-mix(in srgb, var(--color-line) 82%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-surface-soft) 90%, var(--color-sea) 10%);
+  color: var(--color-muted);
+  padding: 0.42rem 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 760;
+}
+
+.map-overview-stats strong {
+  color: var(--color-ink);
+  font-size: 0.94rem;
+}
+
+.learning-map-page .map-toolbar {
+  position: static;
+  z-index: auto;
+  grid-template-columns: 1fr;
+  align-items: end;
+  width: auto;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.learning-map-page .map-toolbar .field {
+  gap: 0.45rem;
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.learning-map-page .map-toolbar select {
+  min-height: 52px;
+  border-color: color-mix(in srgb, var(--color-line-strong) 76%, var(--color-sea));
+  background: color-mix(in srgb, var(--color-surface-soft) 90%, var(--color-blue) 10%);
+  font-weight: 800;
+}
+
+.learning-map-page .chapter-list {
+  gap: 1rem;
+}
+
+.chapter-section {
+  overflow: hidden;
+  gap: 0;
+  border: 1px solid color-mix(in srgb, var(--color-line) 80%, transparent);
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--color-surface) 97%, var(--color-blue) 3%);
+  box-shadow: 0 10px 28px rgba(9, 22, 42, 0.07);
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.chapter-section.is-open {
+  border-color: color-mix(in srgb, var(--color-sea) 34%, var(--color-line));
+  box-shadow: 0 16px 38px rgba(9, 22, 42, 0.1);
+}
+
+.chapter-toggle {
+  display: flex;
+  width: 100%;
+  min-height: 92px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border: 0;
+  background: transparent;
+  color: var(--color-ink);
+  padding: clamp(1rem, 2.5vw, 1.35rem);
+  text-align: left;
+  transition: background 160ms ease;
+}
+
+.chapter-toggle:hover {
+  background: color-mix(in srgb, var(--color-surface-soft) 88%, var(--color-sea) 12%);
+}
+
+.chapter-toggle:active {
+  background: color-mix(in srgb, var(--color-surface-soft) 80%, var(--color-sea) 20%);
+}
+
+.chapter-toggle-copy {
+  display: grid;
+  min-width: 0;
+  gap: 0.35rem;
+}
+
+.chapter-title {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.5vw, 2rem);
+  font-weight: 850;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.chapter-toggle-meta {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.chapter-toggle-meta svg {
+  color: var(--color-muted);
+  transition: transform 180ms ease, color 180ms ease;
+}
+
+.chapter-section.is-open .chapter-toggle-meta svg {
+  color: var(--color-sea);
+  transform: rotate(180deg);
+}
+
+.chapter-course-grid {
+  border-top: 1px solid color-mix(in srgb, var(--color-line) 76%, transparent);
+  padding: clamp(1rem, 2.5vw, 1.35rem);
+  animation: chapter-open 220ms ease-out both;
+}
+
+.chapter-section.is-collapsed .chapter-course-grid {
+  display: none;
+}
+
+.course-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+  grid-template-rows: auto 1fr auto auto auto;
+  gap: 1rem;
+  border-color: color-mix(in srgb, var(--color-line) 82%, var(--color-sea));
+  background: linear-gradient(145deg, color-mix(in srgb, var(--color-surface) 97%, var(--color-sea) 3%), color-mix(in srgb, var(--color-surface) 97%, var(--color-blue) 3%));
+  padding: clamp(1.15rem, 2.3vw, 1.55rem);
+  box-shadow: 0 12px 30px rgba(9, 22, 42, 0.09);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.course-card::after {
+  position: absolute;
+  right: -4rem;
+  bottom: -5rem;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(49, 159, 142, 0.09), transparent 68%);
+  content: "";
+  pointer-events: none;
+}
+
+.course-card:hover {
+  border-color: color-mix(in srgb, var(--color-sea) 58%, var(--color-line));
+  box-shadow: 0 20px 46px rgba(9, 22, 42, 0.16);
+  transform: translateY(-3px);
+}
+
+.course-card-topline,
+.course-progress-row,
+.course-meta {
+  display: flex;
+  align-items: center;
+}
+
+.course-card-topline {
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.course-index {
+  color: var(--color-muted);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.course-card-copy {
+  display: grid;
+  align-content: start;
+  gap: 0.75rem;
+}
+
+.course-card h3 {
+  margin: 0;
+  font-size: clamp(1.18rem, 1.9vw, 1.46rem);
+  line-height: 1.38;
+  letter-spacing: -0.018em;
+}
+
+.course-card p {
+  margin: 0;
+  color: var(--color-muted);
+  line-height: 1.68;
+}
+
+.course-meta {
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.course-meta span {
+  border: 1px solid color-mix(in srgb, var(--color-line) 78%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-surface-soft) 88%, var(--color-sea) 12%);
+  color: var(--color-muted);
+  padding: 0.34rem 0.62rem;
+  font-size: 0.76rem;
+  font-weight: 760;
+}
+
+.course-progress-row {
+  gap: 0.75rem;
+}
+
+.course-progress-row .progress {
+  min-width: 0;
+  flex: 1 1 auto;
+  height: 8px;
+}
+
+.course-progress-row strong {
+  flex: 0 0 auto;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+}
+
+.course-entry {
+  z-index: 1;
+  width: 100%;
+  min-height: 50px;
+}
+
+.course-entry.is-continue {
+  border-color: color-mix(in srgb, var(--color-sea) 72%, #0b4d44);
+  background: linear-gradient(135deg, #64d9c4, #35aa97);
+  color: #071f1c;
+  box-shadow: 0 10px 24px rgba(49, 159, 142, 0.24);
+}
+
+.course-entry.is-continue:hover {
+  background: linear-gradient(135deg, #7ce7d4, #43bba7);
+  box-shadow: 0 14px 30px rgba(49, 159, 142, 0.32);
+}
+
+@keyframes chapter-open {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .map-overview-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .learning-map-page .map-toolbar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .course-card {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .map-overview-panel .page-header h1 {
+    max-width: none;
+    font-size: clamp(1.75rem, 8vw, 2.35rem);
+  }
+
+  .learning-map-page .map-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .map-overview-stats span:nth-child(2) {
+    display: none;
+  }
+
+  .chapter-toggle {
+    align-items: flex-start;
+  }
+
+  .chapter-toggle-meta {
+    align-items: flex-end;
+    flex-direction: column;
+  }
+
+  .chapter-title {
+    font-size: 1.35rem;
+  }
+
+  .course-meta span:nth-child(-n + 2) {
+    display: none;
+  }
+}

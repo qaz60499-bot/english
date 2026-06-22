@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" role="img" aria-labelledby="title desc">
+  <title id="title">Lumi 微光</title>
+  <desc id="desc">一团带有声音波纹的温暖微光。</desc>
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#F7C95C"/>
+      <stop offset="62%" stop-color="#FF6B5F"/>
+      <stop offset="100%" stop-color="#8C82E8"/>
+    </radialGradient>
+  </defs>
+  <path d="M42 91c0-42 34-70 77-70s79 28 79 70-34 68-79 68-77-26-77-68Z" fill="url(#glow)" opacity=".95"/>
+  <path d="M55 57c-18 18-20 49-4 71M186 58c17 20 17 48 1 70" fill="none" stroke="#20304A" stroke-width="8" stroke-linecap="round" opacity=".42"/>
+  <circle cx="93" cy="88" r="7" fill="#20304A"/>
+  <circle cx="141" cy="88" r="7" fill="#20304A"/>
+  <path d="M96 114c12 10 31 10 43 0" fill="none" stroke="#20304A" stroke-width="7" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,110 @@
+:root {
+  color-scheme: light;
+  --color-paper: #eef2f7;
+  --color-surface: #ffffff;
+  --color-surface-soft: #f5f7fb;
+  --color-surface-glass: rgba(255, 255, 255, 0.88);
+  --color-ink: #0b1220;
+  --color-muted: #667085;
+  --color-line: #d7dde7;
+  --color-line-strong: #b8c1cf;
+  --color-coral: #e5484d;
+  --color-sea: #00a6a6;
+  --color-sun: #c8f044;
+  --color-violet: #7c3aed;
+  --color-blue: #2563eb;
+  --color-accent-soft: rgba(37, 99, 235, 0.1);
+  --color-coral-soft: rgba(229, 72, 77, 0.1);
+  --shadow-soft: 0 1px 2px rgba(11, 18, 32, 0.04), 0 12px 30px rgba(11, 18, 32, 0.08);
+  --shadow-raised: 0 18px 50px rgba(11, 18, 32, 0.14);
+  --shadow-button: 0 8px 18px rgba(37, 99, 235, 0.22);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --font-body: Inter, "Aptos", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --font-display: Inter, "Aptos Display", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --font-mono: "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+  --border: var(--color-line);
+  --surface-soft: var(--color-surface-soft);
+  --accent: var(--color-blue);
+  --accent-soft: var(--color-accent-soft);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --color-paper: #090f1b;
+    --color-surface: #111827;
+    --color-surface-soft: #172033;
+    --color-surface-glass: rgba(17, 24, 39, 0.9);
+    --color-ink: #f8fafc;
+    --color-muted: #9aa6b7;
+    --color-line: #2c3749;
+    --color-line-strong: #465268;
+    --color-coral: #ff6b70;
+    --color-sea: #2dd4bf;
+    --color-sun: #d8ff55;
+    --color-violet: #a78bfa;
+    --color-blue: #60a5fa;
+    --color-accent-soft: rgba(96, 165, 250, 0.13);
+    --color-coral-soft: rgba(255, 107, 112, 0.12);
+    --shadow-soft: 0 12px 32px rgba(0, 0, 0, 0.24);
+    --shadow-raised: 0 22px 60px rgba(0, 0, 0, 0.34);
+    --shadow-button: 0 10px 24px rgba(0, 0, 0, 0.28);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-paper: #090f1b;
+  --color-surface: #111827;
+  --color-surface-soft: #172033;
+  --color-surface-glass: rgba(17, 24, 39, 0.9);
+  --color-ink: #f8fafc;
+  --color-muted: #9aa6b7;
+  --color-line: #2c3749;
+  --color-line-strong: #465268;
+  --color-coral: #ff6b70;
+  --color-sea: #2dd4bf;
+  --color-sun: #d8ff55;
+  --color-violet: #a78bfa;
+  --color-blue: #60a5fa;
+  --color-accent-soft: rgba(96, 165, 250, 0.13);
+  --color-coral-soft: rgba(255, 107, 112, 0.12);
+  --shadow-soft: 0 12px 32px rgba(0, 0, 0, 0.24);
+  --shadow-raised: 0 22px 60px rgba(0, 0, 0, 0.34);
+  --shadow-button: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="system"] {
+    color-scheme: dark;
+    --color-paper: #090f1b;
+    --color-surface: #111827;
+    --color-surface-soft: #172033;
+    --color-surface-glass: rgba(17, 24, 39, 0.9);
+    --color-ink: #f8fafc;
+    --color-muted: #9aa6b7;
+    --color-line: #2c3749;
+    --color-line-strong: #465268;
+    --color-coral: #ff6b70;
+    --color-sea: #2dd4bf;
+    --color-sun: #d8ff55;
+    --color-violet: #a78bfa;
+    --color-blue: #60a5fa;
+    --color-accent-soft: rgba(96, 165, 250, 0.13);
+    --color-coral-soft: rgba(255, 107, 112, 0.12);
+    --shadow-soft: 0 12px 32px rgba(0, 0, 0, 0.24);
+    --shadow-raised: 0 22px 60px rgba(0, 0, 0, 0.34);
+    --shadow-button: 0 10px 24px rgba(0, 0, 0, 0.28);
+  }
+}

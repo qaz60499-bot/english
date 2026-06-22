@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" role="img" aria-labelledby="title">
+  <title id="title">英语星球图标</title>
+  <rect width="192" height="192" rx="42" fill="#FFF8EF"/>
+  <path d="M38 120c16-34 49-54 82-46 19 5 30 19 36 37 6 16-7 35-24 35H61c-18 0-30-11-23-26Z" fill="#42B7A4"/>
+  <path d="M58 112c19-21 48-25 74-8" fill="none" stroke="#20304A" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="73" cy="78" r="11" fill="#FF6B5F"/>
+  <circle cx="118" cy="63" r="8" fill="#F7C95C"/>
+  <path d="M72 140h49" stroke="#20304A" stroke-width="8" stroke-linecap="round"/>
+</svg>
