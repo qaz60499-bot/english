@@ -8,6 +8,26 @@ async function finishOnboarding(page: Page) {
   await expect(page).toHaveURL(/#\/$/);
 }
 
+test("short today page keeps navigation in the final viewport row", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await finishOnboarding(page);
+
+  const assertNavigationAtViewportBottom = async () => {
+    await expect.poll(async () => page.evaluate(() => {
+      const navigation = document.querySelector<HTMLElement>(".bottom-nav");
+      if (!navigation) return Number.POSITIVE_INFINITY;
+      return Math.abs(window.innerHeight - navigation.getBoundingClientRect().bottom);
+    })).toBeLessThanOrEqual(2);
+  };
+
+  await assertNavigationAtViewportBottom();
+  await page.setViewportSize({ width: 390, height: 520 });
+  await assertNavigationAtViewportBottom();
+  await page.setViewportSize({ width: 360, height: 780 });
+  await assertNavigationAtViewportBottom();
+  await page.screenshot({ path: "output/english-mobile-home.png", fullPage: false });
+});
+
 test("mobile lesson stays compact and bottom navigation stays attached to the viewport", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await finishOnboarding(page);

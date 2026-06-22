@@ -321,24 +321,44 @@ body {
 @media (max-width: 980px) {
   html,
   body,
-  #root,
-  .english-shell {
-    min-height: 100dvh;
+  #root {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
   }
 
   .english-shell {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 0;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    overflow: hidden;
+  }
+
+  .english-shell .topbar {
+    grid-row: 1;
   }
 
   .english-shell .shell-main {
-    min-height: calc(100dvh - 54px);
-    flex: 1 0 auto;
+    grid-row: 2;
+    min-width: 0;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.75rem;
   }
 
   .english-shell > .bottom-nav {
-    position: fixed !important;
-    inset: auto 0 0 0 !important;
+    position: relative !important;
+    inset: auto !important;
+    grid-row: 3;
     width: 100%;
     max-width: none;
     min-height: calc(64px + env(safe-area-inset-bottom));
